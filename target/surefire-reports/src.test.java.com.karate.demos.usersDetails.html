@@ -168,53 +168,57 @@
 </img><div>
 <div class="scenario">
 <div class="scenario-heading">
-<span class="scenario-keyword">Scenario: [1:4]</span><span class="scenario-name">test get call for user</span>
+<span class="scenario-keyword">Scenario: [1:7]</span><span class="scenario-name">test get call for user</span>
 </div>
+<div class="step-row">
+<div class="step-cell passed">* def expectedOutput = read('ExpectedResponse.json')</div>
+<div class="time-cell passed">0.202961</div>
+</div>
+<div class="preformatted">16:54:13.954 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js</div>
 <div class="step-row">
 <div class="step-cell passed">Given url 'https://reqres.in/api/users/2'</div>
-<div class="time-cell passed">0.002003</div>
+<div class="time-cell passed">0.001924</div>
 </div>
-<div class="preformatted">00:39:57.686 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js</div>
 <div class="step-row">
 <div class="step-cell passed">When method GET</div>
-<div class="time-cell passed">1.558756</div>
+<div class="time-cell passed">1.537311</div>
 </div>
-<div class="preformatted">00:39:58.591 request:
+<div class="preformatted">16:54:14.951 request:
 1 &gt; GET https://reqres.in/api/users/2
 1 &gt; Accept-Encoding: gzip,deflate
 1 &gt; Connection: Keep-Alive
 1 &gt; Host: reqres.in
 1 &gt; User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_261)
 
-00:39:59.226 response time in milliseconds: 632.80
+16:54:15.705 response time in milliseconds: 747.73
 1 &lt; 200
 1 &lt; Access-Control-Allow-Origin: *
-1 &lt; Age: 5720
+1 &lt; Age: 1923
 1 &lt; CF-Cache-Status: HIT
-1 &lt; CF-RAY: 5c3536264ada19bd-SIN
+1 &lt; CF-RAY: 5c3ac9482fc0df73-BOM
 1 &lt; Cache-Control: max-age=14400
 1 &lt; Connection: keep-alive
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Date: Sat, 15 Aug 2020 19:09:42 GMT
+1 &lt; Date: Sun, 16 Aug 2020 11:23:58 GMT
 1 &lt; Etag: W/"173-1Z8bn0V7UjH6FK7NCaza1ccWXQk"
 1 &lt; Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
 1 &lt; Server: cloudflare
-1 &lt; Set-Cookie: __cfduid=df8216a5ed08be7040803f681c09817401597518582; expires=Mon, 14-Sep-20 19:09:42 GMT; path=/; domain=.reqres.in; HttpOnly; SameSite=Lax; Secure
+1 &lt; Set-Cookie: __cfduid=d9259fc7cb187c008ac43f1a9e089ddbd1597577038; expires=Tue, 15-Sep-20 11:23:58 GMT; path=/; domain=.reqres.in; HttpOnly; SameSite=Lax; Secure
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Vary: Accept-Encoding
 1 &lt; Via: 1.1 vegur
 1 &lt; X-Powered-By: Express
-1 &lt; cf-request-id: 0495202bf0000019bd4e07e200000001
+1 &lt; cf-request-id: 04989c21160000df734e953200000001
 {"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"},"ad":{"company":"StatusCode Weekly","url":"http://statuscode.org/","text":"A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."}}</div>
 <div class="step-row">
 <div class="step-cell passed">Then status 200</div>
-<div class="time-cell passed">0.000009</div>
+<div class="time-cell passed">0.000033</div>
 </div>
 <div class="step-row">
 <div class="step-cell passed">Then print response</div>
-<div class="time-cell passed">0.009576</div>
+<div class="time-cell passed">0.001313</div>
 </div>
-<div class="preformatted">00:39:59.266 [print] {
+<div class="preformatted">16:54:15.710 [print] {
   "ad": {
     "company": "StatusCode Weekly",
     "text": "A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.",
@@ -228,6 +232,15 @@
     "email": "janet.weaver@reqres.in"
   }
 }</div>
+<div class="step-row">
+<div class="step-cell passed">And match expectedOutput == response</div>
+<div class="time-cell passed">0.00246</div>
+</div>
+<div class="step-row">
+<div class="step-cell passed">Then print "last_name--&gt;", response.data.last_name</div>
+<div class="time-cell passed">0.025416</div>
+</div>
+<div class="preformatted">16:54:15.738 [print] last_name--&gt; Weaver</div>
 </div>
 </div>
 </body>

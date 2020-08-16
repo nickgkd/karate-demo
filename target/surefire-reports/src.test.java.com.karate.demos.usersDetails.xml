@@ -1,8 +1,11 @@
-<testsuite failures="0" name="src/test/java/com/karate/demos/usersDetails.feature" skipped="0" tests="1" time="1.570344">
-  <testcase classname="src.test.java.com.karate.demos.usersDetails" name="test get call for user" time="1.570344">
-    <system-out>Given url 'https://reqres.in/api/users/2' ................................. passed
+<testsuite failures="0" name="src/test/java/com/karate/demos/usersDetails.feature" skipped="0" tests="1" time="1.771419">
+  <testcase classname="src.test.java.com.karate.demos.usersDetails" name="test get call for user" time="1.771419">
+    <system-out>* def expectedOutput = read('ExpectedResponse.json') ...................... passed
+Given url 'https://reqres.in/api/users/2' ................................. passed
 When method GET ........................................................... passed
 Then status 200 ........................................................... passed
-Then print response ....................................................... passed</system-out>
+Then print response ....................................................... passed
+And match expectedOutput == response ...................................... passed
+Then print "last_name--&gt;", response.data.last_name ........................ passed</system-out>
   </testcase>
 </testsuite>
